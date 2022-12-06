@@ -49,6 +49,7 @@ public class OrderService {
     order.setQuantity(orderCreateDto.getQuantity());
     order.setTabledNo(orderCreateDto.getTabledNo());
     order.setCreateDteTime(LocalDateTime.now());
+    
     Order savedOrder = orderRepository.save(order);
     return getOrderResponseDto(savedOrder);
 
@@ -59,7 +60,7 @@ public class OrderService {
     response.setOrderName(order.getOrderName());
     response.setQuantity(order.getQuantity());
     response.setTabledNo(order.getTabledNo());
-    response.setCreateDateTime(order.getCreateDteTime());
+    response.setCreateDteTime(order.getCreateDteTime());
     return response;
   }
 //Getting all the contents of the database
@@ -74,6 +75,7 @@ public class OrderService {
    response.setOrders(orderResponseList);
     response.setTotal((long)order.size());
     return response;
+    
   }
   //Getting the contents by the id
   public OrderResponseDto getById(Long id) {
@@ -91,6 +93,7 @@ public class OrderService {
       return getOrderResponseDto(optionalOrder.get());
     }
     return null;
+    
   }
 
   //Deleting the contents
