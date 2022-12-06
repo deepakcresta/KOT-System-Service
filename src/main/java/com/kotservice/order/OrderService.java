@@ -17,6 +17,7 @@
  */
 package com.kotservice.order;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -47,8 +48,7 @@ public class OrderService {
     order.setOrderName(orderCreateDto.getOrderName());
     order.setQuantity(orderCreateDto.getQuantity());
     order.setTabledNo(orderCreateDto.getTabledNo());
-    order.setTime(orderCreateDto.getTime());
-
+    order.setCreateDteTime(LocalDateTime.now());
     Order savedOrder = orderRepository.save(order);
     return getOrderResponseDto(savedOrder);
 
@@ -59,7 +59,7 @@ public class OrderService {
     response.setOrderName(order.getOrderName());
     response.setQuantity(order.getQuantity());
     response.setTabledNo(order.getTabledNo());
-    response.setTime(order.getTime());
+    response.setCreateDateTime(order.getCreateDteTime());
     return response;
   }
 //Getting all the contents of the database

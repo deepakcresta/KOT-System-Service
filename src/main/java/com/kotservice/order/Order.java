@@ -23,6 +23,7 @@
 package com.kotservice.order;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -48,5 +49,5 @@ public class Order implements Serializable{
   private String orderName;
   private int quantity;
   private String tabledNo;
-  private String time;
+  LocalDateTime createDteTime =LocalDateTime.now();
 }

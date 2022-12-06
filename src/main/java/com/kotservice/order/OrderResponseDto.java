@@ -22,6 +22,7 @@
  */
 package com.kotservice.order;
 
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -40,6 +41,16 @@ public class OrderResponseDto {
   private int quantity;
   private String tabledNo;
   private String time;
+  /**
+   *<<Add description here>>
+   * @param createDteTime
+   * @author
+   * @since , Modified In: @version, By @author
+   */
+  public void setCreateDateTime(LocalDateTime createDteTime) {
+    // TODO Auto-generated method stub
+    
+  }
 
   
 }

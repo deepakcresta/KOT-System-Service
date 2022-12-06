@@ -23,6 +23,7 @@
 package com.kotservice.order;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import lombok.Data;
 
 /**
@@ -36,8 +37,9 @@ public class OrdederCreateDto {
   
 //  private String foodName;
   private String orderName;
-  private int quantity;
+  private int quantity; 
   private String tabledNo;
   private String time;
+  LocalDateTime createDteTime =LocalDateTime.now();
 
 }
