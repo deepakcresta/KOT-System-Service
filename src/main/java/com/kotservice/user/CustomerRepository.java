@@ -22,7 +22,7 @@
  */
 package com.kotservice.user;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  * <<Description Here>>
@@ -30,6 +30,15 @@ import org.springframework.data.repository.CrudRepository;
  * @version 
  * @since , Nov 4, 2022
  */
-public interface CustomerRepository extends CrudRepository<Customer, Long> {
+public interface CustomerRepository extends JpaRepository<Customer, Long> {
+
+  /**
+   *<<Add description here>>
+   * @param email
+   * @return
+   * @author
+   * @since , Modified In: @version, By @author
+   */
+  Customer findByEmail(String email);
 
 }

@@ -36,10 +36,12 @@ import lombok.Setter;
 @Getter
 
 public class CustomerResponseDto {
+
   private String customerName;
   private String PhoneNumber;
   private String email;
   private String address;
+  private String password;
   
 
 }

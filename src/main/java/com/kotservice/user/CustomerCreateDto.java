@@ -36,8 +36,9 @@ public class CustomerCreateDto  implements Serializable{
   private static final long  serialVersionUID = 1L;
   
   private String customerName;
-  private String phoneNumber;
+  private String PhoneNumber;
   private String email;
-  private  String address;
+  private String address;
+  private String password;
 
 }

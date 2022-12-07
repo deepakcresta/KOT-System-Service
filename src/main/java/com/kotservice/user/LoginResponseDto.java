@@ -22,42 +22,24 @@
  */
 package com.kotservice.user;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 /**
  * <<Description Here>>
  * @author vs
  * @version 
- * @since , Nov 4, 2022
+ * @since , Dec 6, 2022
  */
-@Entity
+
 @Data
-@NoArgsConstructor
-public class Customer {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-  private String customerName;
-  private String phoneNumber;
+public class LoginResponseDto {
   private String email;
-  private String address;
-  private String password;
-  private boolean loggedIn;
+  private Long customerId;
   /**
    *<<Add description here>>
-   * @return
+   * @param customerName2
    * @author
    * @since , Modified In: @version, By @author
    */
- 
-
   
-
 }
