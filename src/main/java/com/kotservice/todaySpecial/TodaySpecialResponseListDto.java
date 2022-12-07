@@ -20,13 +20,9 @@
  * prior written permission is obtained from Aadim Innovation.
  * 
  */
-package com.kotservice.menu;
+package com.kotservice.todaySpecial;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,19 +30,12 @@ import lombok.Setter;
  * <<Description Here>>
  * @author vs
  * @version 
- * @since , Nov 24, 2022
+ * @since , Dec 7, 2022
  */
 @Getter
 @Setter
-@Entity(name="Menu")
-public class Menu implements Serializable{
-
-  private static final long serialVersionUID = 1L;
-
-  @Id
-  @GeneratedValue(strategy= GenerationType.IDENTITY)
-  private Long menuId;
-  
-  private String foodMenu;
+public class TodaySpecialResponseListDto {
+  private List<TodaySpecialResponseDto>todaySpecials;
+  private Long total;
 
 }

@@ -20,33 +20,44 @@
  * prior written permission is obtained from Aadim Innovation.
  * 
  */
-package com.kotservice.menu;
+package com.kotservice.todaySpecial;
 
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+import com.vaadin.flow.component.page.BodySize;
 
 /**
  * <<Description Here>>
  * @author vs
  * @version 
- * @since , Nov 24, 2022
+ * @since , Dec 7, 2022
  */
-@Getter
-@Setter
-@Entity(name="Menu")
-public class Menu implements Serializable{
-
-  private static final long serialVersionUID = 1L;
-
-  @Id
-  @GeneratedValue(strategy= GenerationType.IDENTITY)
-  private Long menuId;
+@CrossOrigin(origins = "*")
+@RestController
+@RequestMapping("api/v1/special")
+public class TodaySpecialController {
   
-  private String foodMenu;
+  @Autowired
+  private TodaySpecialService todaySpecialService;
+  
+  @PostMapping
+@ResponseStatus(code = HttpStatus.CREATED)
+  public TodaySpecialResponseDto addTodaySpecial(@RequestBody TodaySpecialCreateDto todaySpecailCreateDto) {
+    return todaySpecialService.addTodaySpecial(todaySpecailCreateDto);
+  }
+  
+@GetMapping
+@ResponseStatus(code = HttpStatus.OK)
+public TodaySpecialResponseListDto getAll() {
+  return todaySpecialService.getAll();
+  
+}
 
 }
